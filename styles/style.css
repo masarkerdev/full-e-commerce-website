@@ -1,0 +1,62 @@
+/* 1. Modern Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box; /* Prevents padding from affecting width */
+  margin: 0;
+  padding: 0;
+}
+
+/* 2. Root Variables (Theme) */
+:root {
+  --primary-color: #2563eb;
+  --text-main: #1f2937;
+  --bg-body: #ffffff;
+  --font-main: "Inter", system-ui, -apple-system, sans-serif;
+  --transition: all 0.3s ease;
+}
+
+/* 3. Smooth Scrolling & Height Fix */
+html {
+  color-scheme: light dark; /* Browser-level dark mode support */
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: var(--font-main);
+  color: var(--text-main);
+  background-color: var(--bg-body);
+}
+
+/* 4. Responsive Media Elements */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Inherit fonts for inputs/buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Remove animations for users who prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
